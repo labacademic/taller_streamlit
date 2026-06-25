@@ -57,10 +57,3 @@ if st.session_state.tablas:
         st.session_state.tablas = None
         st.rerun()
 
-### ¿Qué cambió exactamente?
-
-1.  **`st.session_state.tablas`**: Ahora los datos no viven en una variable común, sino en un contenedor que Streamlit respeta aunque la página se recargue.
-2.  **Lógica fuera del botón**: El `st.selectbox` y el `st.dataframe` están en un bloque `if st.session_state.tablas:`. Esto significa que una vez que extraes los datos, estos controles aparecerán y se mantendrán visibles sin importar cuántas veces cambies la selección.
-3.  **Botón de Limpieza**: Agregamos una opción para resetear el estado y permitir una nueva búsqueda limpia.
-
-¡Tu aplicación ahora se siente mucho más profesional y fluida! ¿Te gustaría añadirle algo más?
